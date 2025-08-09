@@ -1,11 +1,8 @@
 import Head from 'next/head';
 import SplashScreen from '../components/SplashScreen';
 import { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import Services from '../components/Services';
 import Footer from '../components/Footer';
+import MagicBento from '@/components/MagicBento';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -25,11 +22,19 @@ export default function Home() {
       {showSplash ? (
         <SplashScreen skipSplash={skipSplash} />
       ) : (
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <Hero />
-          <Features />
-          <Services />
+        <div className="h-screen flex flex-col">
+          <MagicBento 
+            textAutoHide={true}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={300}
+            particleCount={12}
+            glowColor="132, 0, 255"
+          />
           <Footer />
         </div>
       )}

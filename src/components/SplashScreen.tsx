@@ -1,9 +1,15 @@
 // import { FaChurch } from 'react-icons/fa';
+import Image from 'next/image';
 import { Logo } from "@/constant/image";
 import SplitText from "./SplitText";
 
+interface SplashScreenProps {
+  skipSplash: () => void;
+}
 
-const SplashScreen = ({ skipSplash } : {skipSplash: any}) => {
+
+
+const SplashScreen = ({ skipSplash }:SplashScreenProps) => {
   const handleAnimationComplete = () => {
     console.log('All letters have animated!');
   };
@@ -11,8 +17,14 @@ const SplashScreen = ({ skipSplash } : {skipSplash: any}) => {
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-blue-900 to-red-800 flex flex-col items-center justify-center z-50 transition-opacity duration-1000">
-      <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center border-4 border-white/30 animate-pulse mb-8">
-        <img src={Logo.src} alt='logo' className='lg:h-14 h-10'/>
+      <div className="w-32 h-32 p-2 bg-white/10 rounded-full flex items-center justify-center border-4 border-white/30 animate-pulse mb-8">
+        <Image 
+          src={Logo} 
+          alt="Splash Image" 
+          width={100} 
+          height={100} 
+          priority 
+        />
       </div>
 
       <SplitText
