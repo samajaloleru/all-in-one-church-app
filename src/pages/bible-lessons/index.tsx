@@ -4,7 +4,6 @@ import Footer from '../../components/Footer';
 import { MonthSelector } from '@/components/BibleLesson/MonthSelector';
 import { ScheduleGrid } from '@/components/BibleLesson/ScheduleGrid';
 import { TodayLesson } from '@/components/BibleLesson/TodayLesson';
-import Header from '@/components/Header';
 import { scheduleData } from '@/constant/bible-lesson/2025/en';
 import { DateSchedule } from '@/types/bible-lession/dateSchedule';
 import { formatDateString } from '@/lib/helper';
@@ -12,7 +11,6 @@ import { formatDateString } from '@/lib/helper';
 export default function BibleLessons() {
   const [activeMonth, setActiveMonth] = useState<string | null>(null);
   const [todaysSchedule, setTodaysSchedule] = useState<DateSchedule | null>(null);
-  const [currentDate] = useState(new Date());
   
   // Transform schedule data
   const transformedScheduleData = useMemo(() => {

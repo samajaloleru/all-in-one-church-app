@@ -21,7 +21,7 @@ export const TodayLesson = ({ schedule }: { schedule: DateSchedule | null }) => 
   return (
     <div className="mb-10 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-2xl shadow-lg border border-amber-200 p-6">
       <div className="flex justify-between items-start mb-4">
-        <h2 className="text-2xl font-bold text-amber-800">Today's Lesson</h2>
+        <h2 className="text-2xl font-bold text-amber-800">Today&apos;s Lesson</h2>
         <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold">
           TODAY
         </span>
@@ -47,7 +47,7 @@ export const TodayLesson = ({ schedule }: { schedule: DateSchedule | null }) => 
         
         <div className="bg-white p-4 rounded-xl shadow-sm">
           <h3 className="text-sm font-semibold text-gray-500 mb-1">Sessions</h3>
-          {schedule.sessions.map((session, index) => (
+          {schedule.sessions.map((session) => (
             <div key={session.id} className="mb-3">
               <p className="font-medium">{session.timeOfTheDay}: {session.time}</p>
               <div className="mt-1">

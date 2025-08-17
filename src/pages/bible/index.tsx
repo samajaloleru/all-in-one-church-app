@@ -1,7 +1,4 @@
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
 import Footer from '../../components/Footer';
-import MagicBento from '@/components/MagicBento';
 
 export default function Bible() {
 

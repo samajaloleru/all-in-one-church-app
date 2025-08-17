@@ -18,9 +18,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { FaHome, FaArchive, FaAccusoft } from "react-icons/fa";
-import { FaSpaghettiMonsterFlying } from "react-icons/fa6";
-
 // Updated type with href instead of onClick
 export type DockItemData = {
   icon: React.ReactNode;

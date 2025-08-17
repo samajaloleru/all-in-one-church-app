@@ -1,5 +1,4 @@
 import Masonry from "react-masonry-css";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
 import { DateCard } from "@/components/BibleLesson/DateCard";
 
@@ -10,13 +9,6 @@ export const ScheduleGrid = ({
   monthSchedule: MonthSchedule; 
   isTodaysDate: (dateStr: string) => boolean;
 }) => {
-  const fetchMoreData = () => {
-    setTimeout(() => {
-      const newItems = Array.from({ length: 10 }, (_, i) => 
-        `https://picsum.photos/400/600?random=10`
-      );
-    }, 1500);
-  };
 
   const breakpoints ={
     default: 4,

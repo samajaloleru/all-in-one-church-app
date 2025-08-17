@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import SplashScreen from '../components/SplashScreen';
 import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
