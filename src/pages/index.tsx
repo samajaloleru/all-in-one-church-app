@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <>``
       {showSplash ? (
         <SplashScreen skipSplash={skipSplash} />
       ) : (

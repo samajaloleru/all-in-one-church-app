@@ -39,7 +39,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <div
-        className={`${lexend.variable} ${jakarta.variable} ${spaceMono.variable} antialiased`}
+        className={`${lexend.variable} ${jakarta.variable} ${spaceMono.variable} antialiased select-none`}
       >
         <Component {...pageProps} />
       </div>
