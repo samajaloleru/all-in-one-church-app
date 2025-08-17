@@ -37,6 +37,9 @@ export type DockProps = {
   spring?: SpringOptions;
 };
 
+type DockItemChild = React.ReactElement<DockLabelProps | DockIconProps>;
+
+
 type DockItemProps = {
   className?: string;
   children: React.ReactNode;
@@ -98,9 +101,12 @@ const DockItem = ({
       role="button"
       aria-haspopup="true"
     >
-      {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { isHovered })
-      )}
+      {Children.map(children as DockItemChild[], (child) => {
+        if (child.type === DockLabel) {
+          return cloneElement(child, { isHovered });
+        }
+        return child;
+      })}
     </motion.div>
   );
 };

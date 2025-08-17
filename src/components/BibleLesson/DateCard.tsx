@@ -25,13 +25,13 @@ export const DateCard = ({
               <h3 className="text-xl font-bold text-indigo-900">
                 {formattedDate}
               </h3>
-            <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+            <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold">
               {dateSchedule.date.split('-')[2]} {dateSchedule.day.substring(0, 3)} 
             </div>
           </div>
-          <div className="flex justify-between items-center mb-3">
+          <div className="flex justify-between items-start mb-3">
             <p className="text-gray-500 items-center-safe">{dateSchedule.day}</p>
-            <p className="text-gray-500 text-sm font-semibold tracking-tight">{dateSchedule.serviceName}</p>
+            <p className="text-gray-500 text-xs font-semibold tracking-tight">{dateSchedule.serviceName}</p>
           </div>
         </div>
         
