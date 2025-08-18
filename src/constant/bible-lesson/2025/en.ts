@@ -1,6 +1,6 @@
 import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
 
-export const scheduleData: MonthSchedule[] = [
+export const scheduleDataEn: MonthSchedule[] = [
   {
     month: "August",
     year: 2025,
@@ -271,6 +271,276 @@ export const scheduleData: MonthSchedule[] = [
             time: "19:00",
             bibleReadings: [
               { lesson: "Only Lesson", passage: "REVELATION 9: 13-21" },
+            ]
+          }
+        ]
+      },
+    ]
+  },
+  {
+    month: "September",
+    year: 2025,
+    dates: [
+      {
+        date: "2025-09-03",
+        serviceName: "",
+        day: "Wednesday",
+        sessions: [
+          {
+            id: "aug-03-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "1 SAMUEL 12:7-15" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-04",
+        serviceName: "NEW MOON SERVICE",
+        day: "Thursday",
+        sessions: [
+          {
+            id: "aug-04-evening",
+            timeOfTheDay: "Evening",
+            time: "22:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "1 CHRONICLES 13:1-14" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-05",
+        serviceName: "",
+        day: "Friday",
+        sessions: [
+          {
+            id: "aug-05-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "JOB 35:1-16" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-07",
+        serviceName: "",
+        day: "Sunday",
+        sessions: [
+          {
+            id: "aug-07-morning",
+            timeOfTheDay: "Morning",
+            time: "10:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "DEUTERONOMY 14:22-29" },
+              { lesson: "2nd Lesson", passage: "MATTHEW 25:31-46" }
+            ]
+          },
+          {
+            id: "aug-07-evening",
+            timeOfTheDay: "Evening",
+            time: "19:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "ROMANS 1:1-5" },
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-09",
+        serviceName: "SERVICE OF SONGS FOR REV. PASTOR FOUNDER SBJ OSHOFFA",
+        day: "Tuesday",
+        sessions: [
+          {
+            id: "aug-09-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "HOSEA 7:1-16" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-10",
+        serviceName: "REMEMBRANCE SERVICE FOR REV. PASTOR FOUNDER SBJ OSHOFFA",
+        day: "Wednesday",
+        sessions: [
+          {
+            id: "aug-10-morning",
+            timeOfTheDay: "Morning",
+            time: "10:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "JOB 19:23-29" },
+              { lesson: "2nd Lesson", passage: "1 THESSALONIANS 4:13-18" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-12",
+        serviceName: "",
+        day: "Friday",
+        sessions: [
+          {
+            id: "aug-12-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "JEREMIAH 38:14-21" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-14",
+        serviceName: "",
+        day: "Sunday",
+        sessions: [
+          {
+            id: "aug-14-morning",
+            timeOfTheDay: "Morning",
+            time: "10:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "DEUTERONOMY 28:1-14" },
+              { lesson: "2nd Lesson", passage: "PHILIPPIANS 4: 1-9" }
+            ]
+          },
+          {
+            id: "aug-14-evening",
+            timeOfTheDay: "Evening",
+            time: "19:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "EXODUS 15: 1-8" },
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-17",
+        serviceName: "",
+        day: "Wednesday",
+        sessions: [
+          {
+            id: "aug-17-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "HAGGAI 1: 1-11" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-19",
+        serviceName: "",
+        day: "Friday",
+        sessions: [
+          {
+            id: "aug-19-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "HAGGAI 1: 12-15" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-21",
+        serviceName: "",
+        day: "Sunday",
+        sessions: [
+          {
+            id: "aug-21-morning",
+            timeOfTheDay: "Morning",
+            time: "10:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "GENESIS 8:20-22" },
+              { lesson: "2nd Lesson", passage: "LUKE 12:33-40" }
+            ]
+          },
+          {
+            id: "aug-21-evening",
+            timeOfTheDay: "Evening",
+            time: "19:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "LUKE 12:41-48" },
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-24",
+        serviceName: "",
+        day: "Wednesday",
+        sessions: [
+          {
+            id: "aug-24-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "PSALMS 119:1-8" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-26",
+        serviceName: "",
+        day: "Friday",
+        sessions: [
+          {
+            id: "aug-26-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "Only Lesson", passage: "PSALMS 119:9-16" }
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-28",
+        serviceName: "ALL SAINTS DAY",
+        day: "Sunday",
+        sessions: [
+          {
+            id: "aug-28-morning",
+            timeOfTheDay: "Morning",
+            time: "10:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "1 KINGS 19:1-18" },
+              { lesson: "2nd Lesson", passage: "JAMES 1: 16-27" }
+            ]
+          },
+          {
+            id: "aug-28-evening",
+            timeOfTheDay: "Evening",
+            time: "18:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "ECCLESIASTES 8:1-8" },
+              { lesson: "2nd Lesson", passage: "PHILIPPIANS 3:17-21" },
+            ]
+          }
+        ]
+      },
+      {
+        date: "2025-09-29",
+        serviceName: "FOUNDER'S DAY",
+        day: "Monday",
+        sessions: [
+          {
+            id: "aug-29-morning",
+            timeOfTheDay: "Morning",
+            time: "10:00",
+            bibleReadings: [
+              { lesson: "1st Lesson", passage: "DANIEL 12:1-13" },
+              { lesson: "2nd Lesson", passage: "MARK 8:34-38" },
             ]
           }
         ]

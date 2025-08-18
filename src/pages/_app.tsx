@@ -3,9 +3,11 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import { useRouter } from 'next/router';
 import { getRouteMetadata } from '../lib/routeMetadata';
+import { LanguageProvider } from '@/context/LanguageContext';
 
 // ✅ Fonts
 import { Lexend, Plus_Jakarta_Sans, Space_Mono } from 'next/font/google';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -37,12 +39,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
-      <div
-        className={`${lexend.variable} ${jakarta.variable} ${spaceMono.variable} antialiased select-none`}
-      >
-        <Component {...pageProps} />
-      </div>
+      <LanguageProvider>
+        <div
+          className={`${lexend.variable} ${jakarta.variable} ${spaceMono.variable} antialiased select-none relative`}
+        >
+          <Component {...pageProps} />
+          <div className="fixed top-10 md:top-auto md:bottom-10 right-5 md:right-10 z-30">
+            <LanguageSwitcher />
+          </div>
+        </div>
+      </LanguageProvider>
     </>
   );
 }

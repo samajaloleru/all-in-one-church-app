@@ -22,20 +22,20 @@ export const DateCard = ({
       <div className="p-5">
         <div>
           <div className="flex justify-between items-start mb-4">
+            <div className="">
               <h3 className="text-xl font-bold text-indigo-900">
                 {formattedDate}
               </h3>
+              <p className="text-gray-800 text-sm items-center-safe">{dateSchedule.day}</p>
+            </div>
             <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold">
               {dateSchedule.date.split('-')[2]} {dateSchedule.day.substring(0, 3)} 
             </div>
           </div>
-          <div className="flex justify-between items-start mb-3">
-            <p className="text-gray-500 items-center-safe">{dateSchedule.day}</p>
-            <p className="text-gray-500 text-xs font-semibold tracking-tight">{dateSchedule.serviceName}</p>
-          </div>
+          <p className="text-gray-500 text-xs font-semibold tracking-tight">{dateSchedule.serviceName}</p>
         </div>
         
-        <div className="space-y-5">
+        <div className="space-y-5 text-sm">
           {dateSchedule.sessions.map((session) => (
             <div key={session.id} className="border-t border-gray-100 pt-4">
               <div className="flex items-center gap-2 mb-3">

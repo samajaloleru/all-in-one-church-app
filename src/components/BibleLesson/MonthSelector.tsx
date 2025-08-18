@@ -7,7 +7,7 @@ export const MonthSelector = ({
   activeMonth: string | null; 
   setActiveMonth: (month: string) => void 
 }) => (
-  <div className="flex flex-wrap justify-center gap-2 mb-8">
+  <div className="flex flex-wrap justify-center gap-4 mb-8">
     {months.map(month => (
       <button
         key={month}

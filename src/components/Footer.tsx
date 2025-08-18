@@ -1,6 +1,6 @@
 "use client";
 
-import { FaHome, FaArchive } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { FaBookBookmark, FaBookOpenReader, FaMusic } from "react-icons/fa6";
 import Dock from "./Dock";
 
