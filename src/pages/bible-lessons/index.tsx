@@ -1,20 +1,24 @@
-import Head from 'next/head';
-import { useEffect, useMemo, useState } from 'react';
-import Footer from '../../components/Footer';
-import { MonthSelector } from '@/components/BibleLesson/MonthSelector';
-import { ScheduleGrid } from '@/components/BibleLesson/ScheduleGrid';
-import { TodayLesson } from '@/components/BibleLesson/TodayLesson';
-import { scheduleDataEn } from '@/constant/bible-lesson/2025/en';
-import { scheduleDataFr } from '@/constant/bible-lesson/2025/fr';
-import { DateSchedule } from '@/types/bible-lession/dateSchedule';
-import { formatDateString } from '@/lib/helper';
-import { useLanguage } from '@/context/LanguageContext';
+import Head from "next/head";
+import { useEffect, useMemo, useState } from "react";
+import Footer from "../../components/Footer";
+import { MonthSelector } from "@/components/BibleLesson/MonthSelector";
+import { ScheduleGrid } from "@/components/BibleLesson/ScheduleGrid";
+import { TodayLesson } from "@/components/BibleLesson/TodayLesson";
+import { scheduleDataEn } from "@/constant/bible-lesson/2025/en";
+import { scheduleDataFr } from "@/constant/bible-lesson/2025/fr";
+import { DateSchedule } from "@/types/bible-lession/dateSchedule";
+import { formatDateString } from "@/lib/helper";
+import { useLanguage } from "@/context/LanguageContext";
+import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
+
+/** Mapping language → schedule */
+type ScheduleMap = Record<string, MonthSchedule[]>;
 
 export default function BibleLessons() {
   const { language } = useLanguage();
 
   // Language → schedule mapping
-  const scheduleMap: Record<string, any> = {
+  const scheduleMap: ScheduleMap = {
     en: scheduleDataEn,
     fr: scheduleDataFr,
     // es: scheduleDataEs,
@@ -22,14 +26,14 @@ export default function BibleLessons() {
   };
 
   // Select schedule or fallback to English
-  const scheduleData = scheduleMap[language] ?? scheduleDataEn;
+  const scheduleData: MonthSchedule[] = scheduleMap[language] ?? scheduleDataEn;
 
   const [activeMonth, setActiveMonth] = useState<string | null>(null);
   const [todaysSchedule, setTodaysSchedule] = useState<DateSchedule | null>(null);
 
-  // Transform schedule data
-  const transformedScheduleData = useMemo(() => {
-    return scheduleData.map((month: any) => ({
+  // Transform schedule data (add unique key)
+  const transformedScheduleData: MonthSchedule[] = useMemo(() => {
+    return scheduleData.map((month) => ({
       ...month,
       key: `${month.month} ${month.year}`,
     }));
@@ -55,15 +59,15 @@ export default function BibleLessons() {
     );
 
     if (foundMonth) {
-      setActiveMonth(foundMonth.key);
+      setActiveMonth(foundMonth.key ?? null);
 
       // Find today's lesson
-      const todaysDate = foundMonth.dates.find((date: any) =>
+      const todaysDate = foundMonth.dates.find((date) =>
         isTodaysDate(date.date)
       );
       setTodaysSchedule(todaysDate || null);
     } else if (transformedScheduleData.length > 0) {
-      setActiveMonth(transformedScheduleData[0].key);
+      setActiveMonth(transformedScheduleData[0].key ?? null);
     }
   }, [transformedScheduleData]);
 
@@ -75,7 +79,7 @@ export default function BibleLessons() {
       );
 
       if (monthSchedule) {
-        const todaysDate = monthSchedule.dates.find((date: any) =>
+        const todaysDate = monthSchedule.dates.find((date) =>
           isTodaysDate(date.date)
         );
         setTodaysSchedule(todaysDate || null);
@@ -84,15 +88,15 @@ export default function BibleLessons() {
   }, [activeMonth, transformedScheduleData]);
 
   // Get months for selector
-  const months = useMemo(() => {
-    return transformedScheduleData.map((month: any) => month.key);
+  const months: string[] = useMemo(() => {
+    return transformedScheduleData.map((month) => month.key ?? "");
   }, [transformedScheduleData]);
 
   // Get active month schedule
-  const activeMonthSchedule = useMemo(() => {
+  const activeMonthSchedule: MonthSchedule | null = useMemo(() => {
     if (!activeMonth) return null;
     return (
-      transformedScheduleData.find((month: any) => month.key === activeMonth) ||
+      transformedScheduleData.find((month) => month.key === activeMonth) ||
       null
     );
   }, [activeMonth, transformedScheduleData]);
