@@ -1,9 +1,10 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-type Language = 'en' | 'fr';
+type Language = "en" | "fr";
 
 interface LanguageContextProps {
   language: Language;
+  locale: string; // full locale for date formatting
   setLanguage: (lang: Language) => void;
 }
 
@@ -14,27 +15,38 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>("en");
   const [isMounted, setIsMounted] = useState(false);
+
+  // map short code -> full locale
+  const getLocale = (lang: Language): string => {
+    switch (lang) {
+      case "fr":
+        return "fr-FR";
+      case "en":
+      default:
+        return "en-US";
+    }
+  };
 
   // Initialize language from localStorage or browser settings
   useEffect(() => {
-    const storedLanguage = localStorage.getItem('language') as Language | null;
-    const browserLanguage = navigator.language.split('-')[0] as Language;
-    
-    if (storedLanguage && ['en', 'fr'].includes(storedLanguage)) {
+    const storedLanguage = localStorage.getItem("language") as Language | null;
+    const browserLanguage = navigator.language.split("-")[0] as Language;
+
+    if (storedLanguage && ["en", "fr"].includes(storedLanguage)) {
       setLanguageState(storedLanguage);
-    } else if (['en', 'fr'].includes(browserLanguage)) {
+    } else if (["en", "fr"].includes(browserLanguage)) {
       setLanguageState(browserLanguage);
     }
-    
+
     setIsMounted(true);
   }, []);
 
-  // Update localStorage when language changes
+  // Update localStorage & <html lang=""> when language changes
   useEffect(() => {
     if (isMounted) {
-      localStorage.setItem('language', language);
+      localStorage.setItem("language", language);
       document.documentElement.lang = language;
     }
   }, [language, isMounted]);
@@ -46,7 +58,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language, locale: getLocale(language), setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -55,7 +67,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 export const useLanguage = (): LanguageContextProps => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
   return context;
 };

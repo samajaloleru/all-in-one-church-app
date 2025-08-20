@@ -189,7 +189,7 @@ export default function Dock({
   return (
     <motion.div
       style={{ height, scrollbarWidth: "none" }}
-      className="flex max-w-full items-center bg-indigo-100"
+      className="flex max-w-full items-center"
     >
       <motion.div
         onMouseMove={({ clientX }) => { // Changed to clientX for accuracy

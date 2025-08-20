@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useEffect, useMemo, useState } from "react";
-import Footer from "../../components/Footer";
 import { MonthSelector } from "@/components/BibleLesson/MonthSelector";
 import { ScheduleGrid } from "@/components/BibleLesson/ScheduleGrid";
 import { TodayLesson } from "@/components/BibleLesson/TodayLesson";
@@ -10,12 +9,28 @@ import { DateSchedule } from "@/types/bible-lession/dateSchedule";
 import { formatDateString } from "@/lib/helper";
 import { useLanguage } from "@/context/LanguageContext";
 import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
+import { BasicLayout } from "@/components/Layout/BasicLayout";
 
 /** Mapping language → schedule */
 type ScheduleMap = Record<string, MonthSchedule[]>;
 
+type HeaderMap = Record<string, {
+  title: string;
+  description: string;
+}>;
+
 export default function BibleLessons() {
   const { language } = useLanguage();
+
+  const headerDataEn = {
+    title: "Bible Lessons Schedule",
+    description: "Explore the monthly Bible lessons and today's lesson."
+  };
+
+  const headerDataFr= {
+    title: "Calendrier des leçons bibliques",
+    description: "Découvrez le calendrier mensuel des leçons bibliques et la leçon du jour."
+  };
 
   // Language → schedule mapping
   const scheduleMap: ScheduleMap = {
@@ -24,9 +39,18 @@ export default function BibleLessons() {
     // es: scheduleDataEs,
     // yo: scheduleDataYo,
   };
+  
+  const headerMap: HeaderMap = {
+    en: headerDataEn,
+    fr: headerDataFr,
+    // es: scheduleDataEs,
+    // yo: scheduleDataYo,
+  };
 
   // Select schedule or fallback to English
   const scheduleData: MonthSchedule[] = scheduleMap[language] ?? scheduleDataEn;
+  
+  const headerData = headerMap[language] ?? headerDataEn;
 
   const [activeMonth, setActiveMonth] = useState<string | null>(null);
   const [todaysSchedule, setTodaysSchedule] = useState<DateSchedule | null>(null);
@@ -107,8 +131,10 @@ export default function BibleLessons() {
         <title>Bible Lessons Schedule</title>
         <meta name="description" content="Monthly Bible lessons schedule" />
       </Head>
-
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 py-8 px-4">
+      <BasicLayout
+        title={headerData.title}
+        description={headerData.description}
+      >
         <div className="max-w-6xl mx-auto container">
           <TodayLesson schedule={todaysSchedule} />
 
@@ -125,8 +151,7 @@ export default function BibleLessons() {
             />
           )}
         </div>
-      </div>
-      <Footer />
+      </BasicLayout>
     </>
   );
 }

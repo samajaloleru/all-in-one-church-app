@@ -1,3 +1,4 @@
+import { useLanguage } from "@/context/LanguageContext";
 import { convert24HourTo12Hour } from "@/lib/helper";
 import { DateSchedule } from "@/types/bible-lession/dateSchedule";
 
@@ -8,7 +9,8 @@ export const DateCard = ({
   dateSchedule: DateSchedule;
   isToday: boolean;
 }) => {
-  const formattedDate = new Date(dateSchedule.date).toLocaleDateString('en-US', {
+  const { locale, language } = useLanguage();
+  const formattedDate = new Date(dateSchedule.date).toLocaleDateString(locale, {
     month: 'short',
     day: 'numeric'
   });
@@ -23,7 +25,7 @@ export const DateCard = ({
         <div>
           <div className="flex justify-between items-start mb-4">
             <div className="">
-              <h3 className="text-xl font-bold text-indigo-900">
+              <h3 className="text-xl font-bold text-indigo-900 capitalize">
                 {formattedDate}
               </h3>
               <p className="text-gray-800 text-sm items-center-safe">{dateSchedule.day}</p>
