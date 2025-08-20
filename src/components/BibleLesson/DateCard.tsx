@@ -9,7 +9,7 @@ export const DateCard = ({
   dateSchedule: DateSchedule;
   isToday: boolean;
 }) => {
-  const { locale, language } = useLanguage();
+  const { locale } = useLanguage();
   const formattedDate = new Date(dateSchedule.date).toLocaleDateString(locale, {
     month: 'short',
     day: 'numeric'

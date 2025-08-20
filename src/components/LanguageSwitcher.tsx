@@ -35,7 +35,7 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative" ref={dropdownRef}>
       {/* Dropdown */}
       <div 
-        className={`absolute right-10 top-6 md:top-auto bottom-0 md:bottom-6 mt-2 w-40 z-50 transition-all duration-300 ${
+        className={`absolute right-10 top-6 md:top-auto bottom-0 md:bottom-6 mt-2 w-40 z-50  transition-all duration-300 ${
           isOpen 
             ? 'opacity-100 visible translate-y-0' 
             : 'opacity-0 invisible translate-y-2'
@@ -44,7 +44,7 @@ const LanguageSwitcher: React.FC = () => {
         <div className="flex flex-col bg-white rounded-lg shadow-lg py-2">
           <button
             onClick={() => handleLanguageSelect('en')}
-            className={`w-full text-left px-4 py-2 text-sm hover:bg-indigo-50 flex items-center ${
+            className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-indigo-50 flex items-center ${
               language === 'en' ? 'text-indigo-600 font-medium' : 'text-gray-700'
             }`}
           >
@@ -61,7 +61,7 @@ const LanguageSwitcher: React.FC = () => {
           
           <button
             onClick={() => handleLanguageSelect('fr')}
-            className={`w-full text-left px-4 py-2 text-sm hover:bg-indigo-50 flex items-center ${
+            className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-indigo-50 flex items-center ${
               language === 'fr' ? 'text-indigo-600 font-medium' : 'text-gray-700'
             }`}
           >
@@ -80,7 +80,7 @@ const LanguageSwitcher: React.FC = () => {
       
       {/* Toggle Button */}
       <button 
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-900 to-red-800 text-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full bg-gradient-to-br from-blue-900 to-red-800 text-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
         aria-label="Change language"
         onClick={toggleDropdown}
         aria-expanded={isOpen}

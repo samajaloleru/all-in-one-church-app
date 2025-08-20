@@ -21,13 +21,6 @@ const jakarta = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  variable: '--font-space-mono',
-  weight: ['400', '700'], // Specify the weights you want
-  display: 'swap',
-});
-
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { title, description } = getRouteMetadata(router.pathname);
@@ -41,7 +34,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <LanguageProvider>
         <div
-          className={`${lexend.variable} ${jakarta.variable} ${spaceMono.variable} antialiased select-none relative`}
+          className={`${lexend.variable} ${jakarta.variable} antialiased select-none relative`}
         >
           <Component {...pageProps} />
           <div className="fixed top-10 md:top-auto md:bottom-10 right-5 md:right-10 z-30">
