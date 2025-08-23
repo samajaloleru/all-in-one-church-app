@@ -1,4 +1,4 @@
-import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
+import { MonthSchedule } from "@/types/bible-lession";
 
 export const scheduleDataEn: MonthSchedule[] = [
   {

@@ -34,3 +34,26 @@ export const convert24HourTo12Hour = (time24: string): string => {
 
   return `${formattedHours}:${formattedMinutes} ${period}`;
 }
+
+export const parseBiblePassage = (passage: string) => {
+  const normalizedPassage = passage.replace(/\s+/g, ' ').trim();
+
+  const pattern = /^([1-3]?\s*[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)(?::\s*(\d+)(?:\s*-\s*(\d+))?)?$/;
+  const match = normalizedPassage.match(pattern);
+
+  if (match) {
+    let bookName = match[1].toLowerCase().replace(/\s+/g, '-');
+    bookName = bookName.replace(/^1-/, '1-').replace(/^2-/, '2-').replace(/^3-/, '3-');
+
+    return {
+      book: bookName,
+      chapter: match[2],
+      verse: match[3] || '1',
+      range: match[4] || null,
+      hasRange: !!match[4],
+      fullReference: passage,
+    };
+  }
+
+  return null;
+};

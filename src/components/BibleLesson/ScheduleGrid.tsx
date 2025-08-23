@@ -1,6 +1,6 @@
 import Masonry from "react-masonry-css";
-import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
 import { DateCard } from "@/components/BibleLesson/DateCard";
+import { MonthSchedule } from "@/types/bible-lession";
 
 export const ScheduleGrid = ({ 
   monthSchedule, 

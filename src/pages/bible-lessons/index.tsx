@@ -5,11 +5,10 @@ import { ScheduleGrid } from "@/components/BibleLesson/ScheduleGrid";
 import { TodayLesson } from "@/components/BibleLesson/TodayLesson";
 import { scheduleDataEn } from "@/constant/bible-lesson/2025/en";
 import { scheduleDataFr } from "@/constant/bible-lesson/2025/fr";
-import { DateSchedule } from "@/types/bible-lession/dateSchedule";
 import { formatDateString } from "@/lib/helper";
 import { useLanguage } from "@/context/LanguageContext";
-import { MonthSchedule } from "@/types/bible-lession/monthSchedule";
 import { BasicLayout } from "@/components/Layout/BasicLayout";
+import { DateSchedule, MonthSchedule } from "@/types/bible-lession";
 
 /** Mapping language → schedule */
 type ScheduleMap = Record<string, MonthSchedule[]>;

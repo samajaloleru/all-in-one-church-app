@@ -1,6 +1,7 @@
 import { useLanguage } from "@/context/LanguageContext";
-import { convert24HourTo12Hour } from "@/lib/helper";
-import { DateSchedule } from "@/types/bible-lession/dateSchedule";
+import { convert24HourTo12Hour, parseBiblePassage } from "@/lib/helper";
+import { DateSchedule } from "@/types/bible-lession";
+import { useRouter } from "next/router";
 
 export const DateCard = ({ 
   dateSchedule,
@@ -9,11 +10,20 @@ export const DateCard = ({
   dateSchedule: DateSchedule;
   isToday: boolean;
 }) => {
+  const router = useRouter();
   const { locale } = useLanguage();
   const formattedDate = new Date(dateSchedule.date).toLocaleDateString(locale, {
     month: 'short',
     day: 'numeric'
   });
+
+  const handleBiblePassageClick = (passage: string) => {
+    const parsed = parseBiblePassage(passage);
+    if (parsed) {
+      // Navigate to the Bible chapter page with the verse as a hash
+      router.push(`/bible/${parsed.book}/${parsed.chapter}#verse-${parsed.verse}`);
+    }
+  };
   
   return (
     <div 
@@ -48,14 +58,26 @@ export const DateCard = ({
               </div>
               
               <div className="space-y-3">
-                {session.bibleReadings.map((reading, idx) => (
-                  <div key={idx} className="p-3 bg-blue-50 rounded-lg">
-                    <h4 className="text-sm font-semibold text-gray-600 mb-1">
-                      {reading.lesson}
-                    </h4>
-                    <p className="font-medium text-indigo-900">{reading.passage}</p>
-                  </div>
-                ))}
+                {session.bibleReadings.map((reading, idx) => {
+                  const parsedPassage = parseBiblePassage(reading.passage);
+                  return (
+                    <div key={idx} className="p-3 bg-blue-50 rounded-lg">
+                      <h4 className="text-sm font-semibold text-gray-600 mb-1">
+                        {reading.lesson}
+                      </h4>
+                      {parsedPassage ? (
+                        <button
+                          onClick={() => handleBiblePassageClick(reading.passage)}
+                          className="font-medium text-indigo-900 hover:text-indigo-700 underline cursor-pointer text-left"
+                        >
+                          {reading.passage}
+                        </button>
+                      ) : (
+                        <p className="font-medium text-indigo-900">{reading.passage}</p>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
