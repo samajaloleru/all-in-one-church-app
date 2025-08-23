@@ -21,14 +21,15 @@ export default function Bible() {
   return (
     <>
       <Head>
-        <title>Holy Bible</title>
-        <meta name="description" content="Read God's Word" />
+        <title>{`${selectedTestament} Testament Books`} | Holy Bible</title>
+        <title>Holy Bible </title>
+        <meta name="description" content="Explore the Bible, read scriptures, and deepen your faith." />
       </Head>
       <BasicLayout
-        title="Holy Bible"
-        description="Explore the Bible, read scriptures, and deepen your faith."
+        title={`${selectedTestament} Testament Books`}
+        description={`Explore the ${selectedTestament} Testament Books, and deepen your faith.`}
       >
-        <div className="max-w-6xl mx-auto container">
+        <div className="max-w-7xl md:max-w-6xl md:mx-auto container">
           <BibleSearch verses={bibleVerses} onVerseSelect={handleVerseSelect} />
 
           <div className="bg-white rounded-xl shadow-md p-6 mb-8">
@@ -37,8 +38,8 @@ export default function Bible() {
                 onClick={() => setSelectedTestament('Old')}
                 className={`px-6 py-2 rounded-lg ${
                   selectedTestament === 'Old' 
-                    ? 'bg-amber-600 text-white' 
-                    : 'bg-amber-100 text-amber-800'
+                    ? 'bg-rose-600 text-white' 
+                    : 'bg-rose-100 text-rose-800'
                 }`}
               >
                 Old Testament
@@ -47,8 +48,8 @@ export default function Bible() {
                 onClick={() => setSelectedTestament('New')}
                 className={`px-6 py-2 rounded-lg ${
                   selectedTestament === 'New' 
-                    ? 'bg-blue-600 text-white' 
-                    : 'bg-blue-100 text-blue-800'
+                    ? 'bg-zinc-600 text-white' 
+                    : 'bg-zinc-100 text-zinc-800'
                 }`}
               >
                 New Testament
@@ -56,11 +57,7 @@ export default function Bible() {
             </div>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-indigo-800 mb-4">
-              {selectedTestament} Testament Books
-            </h2>
-            
+          <div className="mb-8">            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredBooks.map(book => (
                 <Link key={book.id} href={`/bible/${book.slug}`} passHref>

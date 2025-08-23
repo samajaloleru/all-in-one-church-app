@@ -16,16 +16,16 @@ const BibleSearch: React.FC<BibleSearchProps> = ({ verses, onVerseSelect }) => {
 
   return (
     <div className="mb-8">
-      <div className="relative">
+      <div className="border-2 border-rose-400 rounded-lg focus:ring-2 focus:ring-zinc-500 focus:border-zinc-500 w-full flex items-center space-x-2 p-2 px-4">
         <input
           type="text"
           placeholder="Search Bible verses or references..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          className="w-full bg-transparent focus:outline-none text-rose-800 placeholder-rose-500"
         />
         <svg 
-          className="absolute right-3 top-3.5 h-5 w-5 text-gray-400" 
+          className="h-5 w-5 text-rose-400" 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 20 20" 
           fill="currentColor"
@@ -39,15 +39,15 @@ const BibleSearch: React.FC<BibleSearchProps> = ({ verses, onVerseSelect }) => {
           {filteredVerses.map(verse => (
             <div
               key={`${verse.bookId}-${verse.chapter}-${verse.verse}`}
-              className="p-3 border-b border-gray-100 hover:bg-indigo-50 cursor-pointer"
+              className="p-3 border-b border-rose-100 hover:bg-zinc-50 cursor-pointer"
               onClick={() => onVerseSelect(verse)}
             >
               <div className="font-medium">{verse.bookName} {verse.chapter}:{verse.verse}</div>
-              <div className="text-sm text-gray-600">{verse.text}</div>
+              <div className="text-sm text-rose-600">{verse.text}</div>
             </div>
           ))}
           {filteredVerses.length === 0 && (
-            <div className="p-3 text-center text-gray-500">No verses found</div>
+            <div className="p-3 text-center text-rose-500">No verses found</div>
           )}
         </div>
       )}

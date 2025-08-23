@@ -134,7 +134,7 @@ export default function BibleLessons() {
         title={headerData.title}
         description={headerData.description}
       >
-        <div className="max-w-6xl mx-auto container">
+        <div className="max-w-7xl md:max-w-6xl md:mx-auto mx-auto container">
           <TodayLesson schedule={todaysSchedule} />
 
           <MonthSelector

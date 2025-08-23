@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="relative h-[85vh] flex items-center justify-center bg-gradient-to-b from-blue-900/40 to-blue-900/90">
+    <section className="relative h-[85vh] flex items-center justify-center bg-gradient-to-b from-zinc-900/40 to-zinc-900/90">
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-30"
@@ -14,7 +14,7 @@ const Hero = () => {
         <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-10">
           A place of worship, fellowship, and spiritual growth for all generations
         </p>
-        <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+        <button className="bg-yellow-500 hover:bg-yellow-600 text-zinc-900 font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
           Join Us This Sunday
         </button>
       </div>

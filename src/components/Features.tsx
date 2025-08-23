@@ -20,7 +20,7 @@ const Features = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="font-playfair text-3xl md:text-4xl text-center text-blue-900 mb-16">
+        <h2 className="font-playfair text-3xl md:text-4xl text-center text-zinc-900 mb-16">
           Our Ministries
         </h2>
         
@@ -28,11 +28,11 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-blue-50 rounded-xl p-8 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              className="bg-zinc-50 rounded-xl p-8 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             >
               <div className="text-5xl mb-5">{feature.icon}</div>
-              <h3 className="text-2xl font-bold text-blue-900 mb-3">{feature.title}</h3>
-              <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+              <h3 className="text-2xl font-bold text-zinc-900 mb-3">{feature.title}</h3>
+              <p className="text-rose-700 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -44,14 +44,14 @@ const LanguageSwitcher: React.FC = () => {
         <div className="flex flex-col bg-white rounded-lg shadow-lg py-2">
           <button
             onClick={() => handleLanguageSelect('en')}
-            className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-indigo-50 flex items-center ${
-              language === 'en' ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-zinc-50 flex items-center ${
+              language === 'en' ? 'text-zinc-600 font-medium' : 'text-rose-700'
             }`}
           >
             <span className="mr-2">🇺🇸</span>
             <span>English</span>
             {language === 'en' && (
-              <span className="ml-auto text-indigo-600">
+              <span className="ml-auto text-zinc-600">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
@@ -61,14 +61,14 @@ const LanguageSwitcher: React.FC = () => {
           
           <button
             onClick={() => handleLanguageSelect('fr')}
-            className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-indigo-50 flex items-center ${
-              language === 'fr' ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            className={`w-full text-left px-4 py-2 text-sm cursor-pointer hover:bg-zinc-50 flex items-center ${
+              language === 'fr' ? 'text-zinc-600 font-medium' : 'text-rose-700'
             }`}
           >
             <span className="mr-2">🇫🇷</span>
             <span>Français</span>
             {language === 'fr' && (
-              <span className="ml-auto text-indigo-600">
+              <span className="ml-auto text-zinc-600">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
@@ -80,7 +80,7 @@ const LanguageSwitcher: React.FC = () => {
       
       {/* Toggle Button */}
       <button 
-        className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full bg-gradient-to-br from-blue-900 to-red-800 text-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full bg-gradient-to-br from-zinc-900 to-rose-800 text-white shadow-md hover:bg-rose-100 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500"
         aria-label="Change language"
         onClick={toggleDropdown}
         aria-expanded={isOpen}

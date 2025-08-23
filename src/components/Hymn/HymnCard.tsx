@@ -13,16 +13,16 @@ const HymnCard: React.FC<HymnCardProps> = ({ hymn, onClick }) => {
       onClick={onClick}
     >
       <div className="flex md:flex-row flex-col justify-between items-start mb-3">
-        <h3 className="text-xl font-bold text-indigo-800">{hymn.number}. {hymn.title}</h3>
-        <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+        <h3 className="text-xl font-bold text-zinc-800">{hymn.number}. {hymn.title}</h3>
+        <span className="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full text-sm">
           {hymn.category}
         </span>
       </div>
       {hymn.musicNote && (
-        <p className="text-gray-600 mb-4">{hymn.musicNote}</p>
+        <p className="text-rose-600 mb-4">{hymn.musicNote}</p>
       )}
       {hymn.lyrics.length > 0 && (
-        <div className="text-gray-700">
+        <div className="text-rose-700">
           <p className="line-clamp-2">{hymn.lyrics[0].lines[0]}</p>
         </div>
       )}

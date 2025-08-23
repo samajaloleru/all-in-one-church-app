@@ -27,7 +27,7 @@ export const ScheduleGrid = ({
     >
     {monthSchedule.dates.length === 0 ? (
       <div className="col-span-full text-center py-8">
-        <p className="text-gray-500">No lessons scheduled for this month.</p>
+        <p className="text-rose-500">No lessons scheduled for this month.</p>
       </div>
     ) : (
       monthSchedule.dates.map(date => (

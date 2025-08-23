@@ -53,13 +53,13 @@ export default function Bible() {
         title="Hymn"
         description="Browse our collection of Celestial Church of Christ inspirational hymns"
       >
-        <div className="max-w-6xl mx-auto container">
+        <div className="max-w-7xl md:max-w-6xl md:mx-auto mx-auto container">
           <HymnSearch hymns={hymns} onHymnSelect={handleHymnSelect} />
 
           {view === 'categories' ? (
             <>
               <div className="mb-8 flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-indigo-800">Hymn Categories</h2>
+                <h2 className="text-2xl font-bold text-zinc-800">Hymn Categories</h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -77,14 +77,14 @@ export default function Bible() {
               <div className="mb-8 flex md:flex-row flex-col justify-between md:items-center">
                 <button
                   onClick={handleBackToCategories}
-                  className="flex items-center text-indigo-600 hover:text-indigo-800"
+                  className="flex items-center text-zinc-600 hover:text-zinc-800"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
                   </svg>
                   Back to Categories
                 </button>
-                <h2 className="text-2xl font-bold text-indigo-800">
+                <h2 className="text-2xl font-bold text-zinc-800">
                   {selectedCategory?.title}
                 </h2>
                 <div></div> {/* Empty div for spacing */}

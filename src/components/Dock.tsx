@@ -142,7 +142,7 @@ const DockLabel = ({
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#060010] px-2 py-0.5 text-xs text-white`}
+          className={`${className} absolute -top-9 left-1/2 w-fit whitespace-pre rounded-md border-2 border-zinc-700 bg-rose-700 px-3 py-0.5 text-lg text-white`}
           role="tooltip"
           style={{ x: "-50%" }}
         >
@@ -200,7 +200,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} fixed bottom-5 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl bg-gradient-to-br from-blue-900 to-red-800 border-neutral-700 border-2 pb-2 px-4 z-50`}
+        className={`${className} fixed bottom-5 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl bg-gradient-to-br from-zinc-900 to-rose-800 border-amber-700 border-3 pt-2 pb-2 px-4 z-50`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"

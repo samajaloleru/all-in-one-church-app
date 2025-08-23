@@ -21,13 +21,13 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-gray-100">
+    <section className="py-20 bg-gradient-to-b from-zinc-50 to-rose-100">
       <div className="container mx-auto px-4">
-        <h2 className="font-playfair text-3xl md:text-4xl text-center text-blue-900 mb-16">
+        <h2 className="font-playfair text-3xl md:text-4xl text-center text-zinc-900 mb-16">
           Worship Services
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl md:max-w-6xl md:mx-auto mx-auto">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -38,11 +38,11 @@ const Services = () => {
                 style={{ backgroundImage: `url(${service.image})` }}
               ></div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{service.title}</h3>
-                <span className="inline-block bg-yellow-400 text-blue-900 font-bold px-3 py-1 rounded-full text-sm mb-3">
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">{service.title}</h3>
+                <span className="inline-block bg-yellow-400 text-zinc-900 font-bold px-3 py-1 rounded-full text-sm mb-3">
                   {service.time}
                 </span>
-                <p className="text-gray-700">{service.description}</p>
+                <p className="text-rose-700">{service.description}</p>
               </div>
             </div>
           ))}

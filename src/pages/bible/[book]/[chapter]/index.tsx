@@ -24,11 +24,11 @@ export default function ChapterPage() {
     <div className="bg-white rounded-xl shadow-md p-6">
       <div className="space-y-4">
         {verses.map(verse => (
-          <div key={verse.verse} id={`verse-${verse.verse}`} className="pb-4 border-b border-gray-100 last:border-b-0">
-            <Link href={`/bible/${bookData?.slug}/${chapterNum}/${verse.verse}`} className="text-indigo-600 hover:text-indigo-800 font-medium mr-2" passHref>
+          <div key={verse.verse} id={`verse-${verse.verse}`} className="pb-4 border-b border-rose-100 last:border-b-0">
+            <Link href={`/bible/${bookData?.slug}/${chapterNum}/${verse.verse}`} className="text-zinc-600 hover:text-zinc-800 font-medium mr-2" passHref>
               {verse.verse}.
             </Link>
-            <span className="text-gray-800">{verse.text}</span>
+            <span className="text-rose-800">{verse.text}</span>
           </div>
         ))}
       </div>
@@ -52,12 +52,12 @@ export default function ChapterPage() {
 
   if (!bookData || isNaN(chapterNum)) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-indigo-800">Chapter not found</h1>
+          <h1 className="text-2xl font-bold text-zinc-800">Chapter not found</h1>
           <button 
             onClick={() => router.push('/bible')}
-            className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg"
+            className="mt-4 px-4 py-2 bg-zinc-600 text-white rounded-lg"
           >
             Back to Bible
           </button>
@@ -77,12 +77,12 @@ export default function ChapterPage() {
         title={`${bookData.name} ${chapterNum}`}
         description={`Read ${bookData.name} chapter ${chapterNum} from the Holy Bible`}
       >
-        <div className="max-w-6xl mx-auto container">
+        <div className="max-w-7xl md:max-w-6xl md:mx-auto mx-auto container">
           <header className="text-center mb-10">
             <div className="flex justify-between items-center mb-4">
               <button 
                 onClick={() => router.push(`/bible/${bookData.slug}`)}
-                className="flex items-center text-indigo-600 hover:text-indigo-800"
+                className="flex items-center text-zinc-600 hover:text-zinc-800"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
@@ -91,7 +91,7 @@ export default function ChapterPage() {
               </button>
               <button 
                 onClick={() => router.push('/bible')}
-                className="flex items-center text-indigo-600 hover:text-indigo-800"
+                className="flex items-center text-zinc-600 hover:text-zinc-800"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
@@ -99,7 +99,7 @@ export default function ChapterPage() {
                 Back to Books
               </button>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-2">
               {bookData.name} {chapterNum}
             </h1>
           </header>
@@ -107,16 +107,16 @@ export default function ChapterPage() {
           <div className="space-y-6">
             <div className="flex justify-end items-center mb-6">
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-gray-600">View:</span>
+                <span className="text-sm text-rose-600">View:</span>
                 <button
                   onClick={() => setViewMode('single')}
-                  className={`px-3 py-1 rounded ${viewMode === 'single' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                  className={`px-3 py-1 rounded ${viewMode === 'single' ? 'bg-zinc-600 text-white' : 'bg-rose-200'}`}
                 >
                   Single
                 </button>
                 <button
                   onClick={() => setViewMode('multiple')}
-                  className={`px-3 py-1 rounded ${viewMode === 'multiple' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                  className={`px-3 py-1 rounded ${viewMode === 'multiple' ? 'bg-zinc-600 text-white' : 'bg-rose-200'}`}
                 >
                   Multiple
                 </button>
@@ -135,7 +135,7 @@ export default function ChapterPage() {
             }
 
             {verses.length === 0 && (
-              <div className="text-center py-10 text-gray-500">
+              <div className="text-center py-10 text-rose-500">
                 No verses found for {bookData.name} {chapterNum}
               </div>
             )}
@@ -144,7 +144,7 @@ export default function ChapterPage() {
           <div className="mt-10 flex justify-between">
             {chapterNum > 1 && (
               <Link href={`/bible/${bookData.slug}/${chapterNum - 1}`} passHref>
-                <span className="px-4 py-2 bg-indigo-600 text-white rounded-lg flex items-center">
+                <span className="px-4 py-2 bg-zinc-600 text-white rounded-lg flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -154,7 +154,7 @@ export default function ChapterPage() {
             )}
             {chapterNum < bookData.chapters && (
               <Link href={`/bible/${bookData.slug}/${chapterNum + 1}`} passHref>
-                <span className="px-4 py-2 bg-indigo-600 text-white rounded-lg flex items-center ml-auto">
+                <span className="px-4 py-2 bg-zinc-600 text-white rounded-lg flex items-center ml-auto">
                   Next Chapter
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />

@@ -23,12 +23,12 @@ export default function VersePage() {
 
   if (!bookData || isNaN(chapterNum) || isNaN(verseNum) || !verseData) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-indigo-800">Verse not found</h1>
+          <h1 className="text-2xl font-bold text-zinc-800">Verse not found</h1>
           <button 
             onClick={() => router.push('/bible')}
-            className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg"
+            className="mt-4 px-4 py-2 bg-zinc-600 text-white rounded-lg"
           >
             Back to Bible
           </button>
@@ -56,12 +56,12 @@ export default function VersePage() {
         title={`${bookData.name} ${chapterNum}`}
         description={`Read ${bookData.name} ${chapterNum}:${verseNum} from the Holy Bible`}
       >
-        <div className="max-w-6xl mx-auto container">
+        <div className="max-w-7xl md:max-w-6xl md:mx-auto mx-auto container">
           <header className="text-center mb-10">
             <div className="flex justify-between items-center mb-4">
               <button 
                 onClick={() => router.push(`/bible/${bookData.slug}/${chapterNum}`)}
-                className="flex items-center text-indigo-600 hover:text-indigo-800"
+                className="flex items-center text-zinc-600 hover:text-zinc-800"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
@@ -70,7 +70,7 @@ export default function VersePage() {
               </button>
               <button 
                 onClick={() => router.push('/bible')}
-                className="flex items-center text-indigo-600 hover:text-indigo-800"
+                className="flex items-center text-zinc-600 hover:text-zinc-800"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
@@ -78,20 +78,20 @@ export default function VersePage() {
                 Back to Books
               </button>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-2">
               {bookData.name} {chapterNum}:{verseNum}
             </h1>
           </header>
 
           <div className="bg-white rounded-xl shadow-md p-8 text-center mb-10">
-            <p className="text-2xl text-gray-800 leading-relaxed mb-6">{verseData.text}</p>
-            <p className="text-lg text-indigo-600">— {bookData.name} {chapterNum}:{verseNum}</p>
+            <p className="text-2xl text-rose-800 leading-relaxed mb-6">{verseData.text}</p>
+            <p className="text-lg text-zinc-600">— {bookData.name} {chapterNum}:{verseNum}</p>
           </div>
 
           <div className="flex justify-between">
             {prevVerse && (
               <Link href={`/bible/${bookData.slug}/${chapterNum}/${prevVerse.verse}`} passHref>
-                <span className="px-4 py-2 bg-indigo-600 text-white rounded-lg flex items-center">
+                <span className="px-4 py-2 bg-zinc-600 text-white rounded-lg flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -101,7 +101,7 @@ export default function VersePage() {
             )}
             {nextVerse && (
               <Link href={`/bible/${bookData.slug}/${chapterNum}/${nextVerse.verse}`} passHref>
-                <span className="px-4 py-2 bg-indigo-600 text-white rounded-lg flex items-center ml-auto">
+                <span className="px-4 py-2 bg-zinc-600 text-white rounded-lg flex items-center ml-auto">
                   Verse {nextVerse.verse}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
@@ -113,7 +113,7 @@ export default function VersePage() {
 
           <div className="mt-8 text-center">
             <Link href={`/bible/${bookData.slug}/${chapterNum}`} passHref>
-              <span className="text-indigo-600 hover:text-indigo-800">
+              <span className="text-zinc-600 hover:text-zinc-800">
                 View all verses in {bookData.name} {chapterNum}
               </span>
             </Link>

@@ -24,7 +24,7 @@ export const bibleBooks: BibleBook[] = [
   { id: 19, name: "Psalms", slug: "psalms", chapters: 150, testament: "Old" },
   { id: 20, name: "Proverbs", slug: "proverbs", chapters: 31, testament: "Old" },
   { id: 21, name: "Ecclesiastes", slug: "ecclesiastes", chapters: 12, testament: "Old" },
-  { id: 22, name: "Song of Solomon", slug: "song of solomon", chapters: 8, testament: "Old" },
+  { id: 22, name: "Song of Solomon", slug: "song-of-solomon", chapters: 8, testament: "Old" },
   { id: 23, name: "Isaiah", slug: "isaiah", chapters: 66, testament: "Old" },
   { id: 24, name: "Jeremiah", slug: "jeremiah", chapters: 52, testament: "Old" },
   { id: 25, name: "Lamentations", slug: "lamentations", chapters: 5, testament: "Old" },

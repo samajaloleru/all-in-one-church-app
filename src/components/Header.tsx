@@ -2,7 +2,7 @@
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-5 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center shadow-lg sticky top-0 z-40">
+    <header className="bg-gradient-to-r from-zinc-900 to-zinc-800 text-white py-5 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center shadow-lg sticky top-0 z-40">
       <div className="flex items-center mb-4 md:mb-0">
         {/* <FaChurch className="text-3xl md:text-4xl text-yellow-400 mr-3" /> */}
         <div className="font-playfair">

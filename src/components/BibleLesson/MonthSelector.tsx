@@ -13,8 +13,8 @@ export const MonthSelector = ({
         key={month}
         className={`px-4 py-2 rounded-lg transition-all ${
           activeMonth === month
-            ? 'bg-indigo-600 text-white shadow-md transform scale-105'
-            : 'bg-white text-indigo-700 hover:bg-indigo-100'
+            ? 'bg-zinc-600 text-white shadow-md transform scale-105'
+            : 'bg-white text-zinc-700 hover:bg-zinc-100'
         }`}
         onClick={() => setActiveMonth(month)}
       >
