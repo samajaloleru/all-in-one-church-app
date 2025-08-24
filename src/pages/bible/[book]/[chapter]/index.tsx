@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import VerseCard from "@/components/Bible/VerseCard";
 import { BasicLayout } from "@/components/Layout/BasicLayout";
 import { bibleBooks, bibleVerses } from "@/constant/bible/en";
+import ProjectionControls from "@/components/ProjectionControls";
 
 export default function ChapterPage() {
   const router = useRouter();
@@ -164,6 +165,10 @@ export default function ChapterPage() {
             )}
           </div>
         </div>
+        <ProjectionControls 
+          passage={`${bookData.name} ${chapterNum}:${verses.length > 0 ? verses[0].verse : ''}-${verses.length > 0 ? verses[verses.length - 1].verse : ''}`}
+          verses={verses}
+        />
 
       </BasicLayout>
     </>

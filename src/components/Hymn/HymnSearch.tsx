@@ -9,16 +9,30 @@ interface HymnSearchProps {
 const HymnSearch: React.FC<HymnSearchProps> = ({ hymns, onHymnSelect }) => {
   const [query, setQuery] = useState('');
 
-  const filteredHymns = hymns.filter(hymn => 
-    hymn.title.toLowerCase().includes(query.toLowerCase()) ||
-    hymn.number.toString().includes(query.toLowerCase()) ||
-    // hymn.subtitle?.toLowerCase().includes(query.toLowerCase()) ||
-    hymn.lyrics.some(verse => 
-      verse.lines.some(line => 
-        line.toLowerCase().includes(query.toLowerCase())
+   // Trim and lowercase query for comparison
+  const normalizedQuery = query.trim().toLowerCase();
+
+  // Check if query is a number
+  const isNumberQuery = /^\d+$/.test(normalizedQuery);
+
+  let filteredHymns: Hymn[] = [];
+
+  if (isNumberQuery) {
+    // Search only by hymn number
+    filteredHymns = hymns.filter(hymn =>
+      hymn.number.toString() === normalizedQuery
+    );
+  } else {
+    // Search by title or lyrics
+    filteredHymns = hymns.filter(hymn => 
+      hymn.title.toLowerCase().includes(normalizedQuery) ||
+      hymn.lyrics.some(verse => 
+        verse.lines.some(line => 
+          line.toLowerCase().includes(normalizedQuery)
+        )
       )
-    )
-  );
+    );
+  }
 
   const uniqueHymns = Array.from(
     new Map(filteredHymns.map(hymn => [hymn.number, hymn])).values()
